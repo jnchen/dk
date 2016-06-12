@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>互联网舆情引导系统</title>
+	<title><?php echo $title ?></title>
 	<style>
 *{
   box-sizing:border-box;
