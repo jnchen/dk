@@ -852,7 +852,7 @@ if ( ! function_exists('function_usable'))
 
 if(!function_exists('generate_token'))
 {
-	funtion generate_token($password){
+	function generate_token($password){
 		$password_md5 = md5($password);
 
 		$date_md5 = md5(str(strtotime(date('Y-m-d',time()))));
