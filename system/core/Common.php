@@ -853,6 +853,7 @@ if ( ! function_exists('function_usable'))
 if(!function_exists('generate_token'))
 {
 	function generate_token($password){
+		date_default_timezone_set('PRC');
 		$password_md5 = md5($password);
 
 		$date_md5 = md5(''.(strtotime(date('Y-m-d',time()))));
