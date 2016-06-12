@@ -45,4 +45,24 @@ class User_model extends CI_Model {
 	public function update(){
 
 	}
+	public function is_login(){
+		$this->load->helper('cookie');
+
+		$username = get_cookie('username');
+		$password = get_cookie('password');
+		$id = get_cookie('id');
+
+		$this->db->select('id,username,password');
+		$this->db->where('id',$id);
+		$this->db->where('username',$username);
+		$this->db->where('password',$password);
+
+		$query =$this->db->get('users');
+
+		$row  = $query->row_array();
+		if(isset($row)) 
+			return $row;
+		else 
+			return false;
+	}
 }
