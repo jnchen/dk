@@ -16,7 +16,7 @@ class Common extends CI_Controller {
 		$data['hint_password'] = '密码';
 		$data['forget_text'] = '忘记密码？';
 		$data['button_text'] = '登录';
-		$data->load->helper('url');
+		$this->load->helper('url');
 		$this->load->view('login',$data);
 	}
 
