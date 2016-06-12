@@ -10,6 +10,7 @@ class Common extends CI_Controller {
 	}
 
 	public function login(){
-		
+		echo 'Login Page';
+		$this->load->view('login');
 	}
 }
