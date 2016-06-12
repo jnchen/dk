@@ -18,4 +18,8 @@ class Common extends CI_Controller {
 		$data['button_text'] = '登录';
 		$this->load->view('login',$data);
 	}
+
+	public function valid(){
+		
+	}
 }
