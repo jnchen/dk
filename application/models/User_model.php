@@ -66,7 +66,7 @@ class User_model extends CI_Model {
 			return false;
 	}
 	public function login(){
-
+		$this->load->helper('url');
 		$this->db->select('id,username,password');
 		$this->db->where('username',$this->input->post('username'));
 		$this->db->where('password',md5($this->input->post('password')));
