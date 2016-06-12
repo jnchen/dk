@@ -77,7 +77,7 @@ class User_model extends CI_Model {
 		if(isset($row))
 		{
 			$this->input->set_cookie("username",$row['username'],60);
-			$this->input->set_cookie('password',$row['password'],60);
+			$this->input->set_cookie('token',$row['password'],60);
 			$this->input->set_cookie('id',$row['id'],60);
 			header('location:'.site_url());
 		}else{
