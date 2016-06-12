@@ -861,3 +861,11 @@ if(!function_exists('generate_token'))
 		return substr($password_md5,0,16).substr($date_md5, 16,16);
 	}
 }
+
+if(!function_exists('gen_token')){
+	function gen_token($password){
+		date_default_timezone_set('PRC');
+		$date_md5 = md5(''.(strtotime(date('Y-m-d',time()))));
+		return substr($password,0,16).substr($date_md5,16,16);
+	}
+}
