@@ -8,6 +8,8 @@ class Test extends CI_Controller {
 	public function index(){
 		$this->load->model('User_model');
 
-		$this->User_model->is_login();
+		$row = $this->User_model->is_login();
+
+		echo var_dump($row);
 	}
 }
