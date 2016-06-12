@@ -1,6 +1,11 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-
+/***
+* @author jnchen
+* @version 1.0
+* @email caojingchen@live.com
+***/
 class User_model extends CI_Model {
+
 	public $id;
 	public $username;
 	public $password;
@@ -10,6 +15,7 @@ class User_model extends CI_Model {
 	public $parent_id;
 	public $role_id;
 	public $pwm_id;
+
 	public function __construct(){
 		$this->load->database();
 		parent::__construct();
