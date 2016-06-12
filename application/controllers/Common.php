@@ -10,8 +10,12 @@ class Common extends CI_Controller {
 	}
 
 	public function login(){
-		echo 'Login Page';
 		$data['title'] = '登录';
+		$data['h1'] = '登录';
+		$data['hint_user']='用户名';
+		$data['hint_password'] = '密码';
+		$data['foget_text'] = '忘记密码？';
+		$data['button_text'] = '登录'
 		$this->load->view('login',$data);
 	}
 }

@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title><?php echo $title ?></title>
+	<title><?php echo $title; ?></title>
 	<style>
 *{
   box-sizing:border-box;
@@ -133,18 +133,18 @@ h1{
 </head>
 <body>
 <div class="login-form">
-     <h1>Login</h1>
+     <h1><?php echo $h1;?></h1>
      <div class="form-group ">
-       <input type="text" class="form-control" placeholder="Username " id="UserName">
+       <input type="text" class="form-control" placeholder="<?php echo $hint_user; ?>" id="UserName">
        <i class="fa fa-user"></i>
      </div>
      <div class="form-group log-status">
-       <input type="password" class="form-control" placeholder="Password" id="Passwod">
+       <input type="password" class="form-control" placeholder="<?php echo $hint_password; ?>" id="Passwod">
        <i class="fa fa-lock"></i>
      </div>
       <span class="alert">Invalid Credentials</span>
-      <a class="link" href="#">Lost your password?</a>
-     <button type="button" class="log-btn" >Log in</button>
+      <a class="link" href="#"><?php echo $forget_text; ?></a>
+     <button type="button" class="log-btn" ><?php echo $button_text; ?></button>
      
     
    </div>
