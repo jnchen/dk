@@ -143,7 +143,7 @@
        </div>
         <?php echo validation_errors('<span class="wrong-entry">','</span>'); ?>
         <a class="link" href="#"><?php echo $forget_text; ?></a>
-       <button type="button" class="log-btn" ><?php echo $button_text; ?></button>
+       <button type="submit" class="log-btn" ><?php echo $button_text; ?></button>
      </form>
     
    </div>
