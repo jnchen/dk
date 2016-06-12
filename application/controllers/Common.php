@@ -17,6 +17,7 @@ class Common extends CI_Controller {
 		$data['forget_text'] = '忘记密码？';
 		$data['button_text'] = '登录';
 		$this->load->helper('url');
+		$this->load->library('form_validation');
 		$this->load->view('login',$data);
 	}
 
