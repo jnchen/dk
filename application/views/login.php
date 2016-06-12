@@ -134,11 +134,11 @@
      <h1><?php echo $h1;?></h1>
      <form role="form" action="<?php echo site_url().'/Common/valid'; ?>">
        <div class="form-group ">
-         <input type="text" class="form-control" placeholder="<?php echo $hint_user; ?>" id="UserName">
+         <input type="text" class="form-control" placeholder="<?php echo $hint_user; ?>" name="username" id="UserName">
          <i class="fa fa-user"></i>
        </div>
        <div class="form-group log-status">
-         <input type="password" class="form-control" placeholder="<?php echo $hint_password; ?>" id="Passwod">
+         <input type="password" class="form-control" placeholder="<?php echo $hint_password; ?>" name="password" id="Password">
          <i class="fa fa-lock"></i>
        </div>
         <?php echo validation_errors('<span class="wrong-entry">','</span>'); ?>
