@@ -132,7 +132,7 @@
 <body>
 <div class="login-form">
      <h1><?php echo $h1;?></h1>
-     <form role="form" action="<?php echo site_url().'/Common/valid'; ?>">
+     <form role="form" action="<?php echo site_url().'/Common/valid'; ?>" method="post">
        <div class="form-group ">
          <input type="text" class="form-control" placeholder="<?php echo $hint_user; ?>" name="username" id="UserName">
          <i class="fa fa-user"></i>
