@@ -52,9 +52,11 @@ class User_model extends CI_Model {
 		$token = get_cookie('token');
 		$id = get_cookie('id');
 
-		$query = $this->db->select('id,username,password')
-		->from('users')->where('id',$id)->where('username',$username)
-		->like('password',substr($token,0,16),'after')->get();
+		$this->db->select('id,username,password');
+		$this->db->where('id',$id);
+		$this->db->where('username',$password);
+		$this->db->like('password',substr($token,0,16),'after');
+		$query = $this->db->get('users');
 
 		log_message('info',$username);
 		log_message('info',$id);
