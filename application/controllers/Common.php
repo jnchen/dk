@@ -22,6 +22,7 @@ class Common extends CI_Controller {
 	}
 
 	public function valid(){
-
+		$this->load->model('User_model');
+		$this->User_model->login();
 	}
 }

@@ -65,4 +65,22 @@ class User_model extends CI_Model {
 		else 
 			return false;
 	}
+	public function login(){
+
+		$this->db->select('id,username,password');
+		$this->db->where('username'$username);
+		$this->db->where('password'md5($password));
+
+		$query = $this->db->get('users');
+
+		$row = $query->row_array();
+		if(isset($row))
+		{
+			$this->input->set_cookie("username",$row['username'],60);
+			$this->input->set_cookie('password',$row['password'],60);
+			$this->input->set_cookie('id',$row['id'],60);
+		}else{
+			header('location:'.site_url("common/login"));
+		}
+	}
 }
