@@ -849,3 +849,14 @@ if ( ! function_exists('function_usable'))
 		return FALSE;
 	}
 }
+
+if(!function_exists('generate_token'))
+{
+	funtion generate_token($password){
+		$password_md5 = md5($password);
+
+		$date_md5 = md5(str(strtotime(date('Y-m-d',time()))));
+
+		return substr($password_md5,0,16).substr($date_md5, 16,16);
+	}
+}

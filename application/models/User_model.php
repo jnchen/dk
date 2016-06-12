@@ -49,13 +49,13 @@ class User_model extends CI_Model {
 		$this->load->helper('cookie');
 
 		$username = get_cookie('username');
-		$password = get_cookie('password');
+		$token = get_cookie('token');
 		$id = get_cookie('id');
 
 		$this->db->select('id,username,password');
 		$this->db->where('id',$id);
 		$this->db->where('username',$username);
-		$this->db->where('password',$password);
+		$this->db->like('password',substr($token, 0,16),'after');
 
 		$query =$this->db->get('users');
 
@@ -77,7 +77,7 @@ class User_model extends CI_Model {
 		if(isset($row))
 		{
 			$this->input->set_cookie("username",$row['username'],60);
-			$this->input->set_cookie('token',$row['password'],60);
+			$this->input->set_cookie('token',generate_token($row['password']),60);
 			$this->input->set_cookie('id',$row['id'],60);
 			header('location:'.site_url());
 		}else{
