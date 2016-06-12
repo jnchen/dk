@@ -54,7 +54,7 @@ class User_model extends CI_Model {
 
 		$this->db->select('id,username,password');
 		$this->db->where('id',$id);
-		$this->db->where('username',$password);
+		$this->db->where('username',$username);
 		$this->db->like('password',substr($token,0,16),'after');
 		$query = $this->db->get('users');
 
