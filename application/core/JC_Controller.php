@@ -16,8 +16,6 @@ class JC_Controller extends CI_Controller {
 			$this->input->set_cookie("username",$this->cur_user['username'],60);
 			$this->input->set_cookie('token',gen_token($this->cur_user['password']),60);
 			$this->input->set_cookie('id',$this->cur_user['id'],60);
-
-			header("location:".site_url("Test"));
 		}
 	}
 }
