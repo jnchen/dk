@@ -58,13 +58,7 @@ class User_model extends CI_Model {
 		$this->db->like('password',substr($token,0,16),'after');
 		$query = $this->db->get('users');
 
-		log_message('info',$username);
-		log_message('info',$id);
-		log_message('info',$token);
-
-
 		$row  = $query->row_array();
-		log_message('info',isset($row));
 		if(isset($row)) 
 			return $row;
 		else 
