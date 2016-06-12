@@ -855,7 +855,7 @@ if(!function_exists('generate_token'))
 	function generate_token($password){
 		$password_md5 = md5($password);
 
-		$date_md5 = md5(str(strtotime(date('Y-m-d',time()))));
+		$date_md5 = md5(''.(strtotime(date('Y-m-d',time()))));
 
 		return substr($password_md5,0,16).substr($date_md5, 16,16);
 	}
